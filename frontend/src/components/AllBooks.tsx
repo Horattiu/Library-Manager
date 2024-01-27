@@ -49,17 +49,20 @@ function AllBooks() {
   };
 
   const { data: books, error } = useSWR<Book[]>(
-    "http://localhost:3001/books",
+    "https://backend-librarymanager.onrender.com/books",
     fetcher
   );
 
   const handleDelete = async (bookId: number) => {
     try {
-      await fetch(`http://localhost:3001/books/${bookId}`, {
-        method: "DELETE",
-      });
+      await fetch(
+        `https://backend-librarymanager.onrender.com/books/${bookId}`,
+        {
+          method: "DELETE",
+        }
+      );
 
-      mutate("http://localhost:3001/books");
+      mutate("https://backend-librarymanager.onrender.com/books");
     } catch (error) {
       console.error("Error deleting book", error);
     }
@@ -69,7 +72,7 @@ function AllBooks() {
     console.log("Edited book:", editedBook);
 
     try {
-      const url = `http://localhost:3001/books/${editedBook.id}`;
+      const url = `https://backend-librarymanager.onrender.com/${editedBook.id}`;
       const response = await fetch(url, {
         method: "PUT",
         headers: {
@@ -85,7 +88,7 @@ function AllBooks() {
       console.log("Book successfully updated on the server");
 
       // Update the book in the UI
-      mutate("http://localhost:3001/books");
+      mutate("https://backend-librarymanager.onrender.com/books");
 
       setModalOpen(false);
     } catch (error) {
