@@ -53,6 +53,18 @@ function AllBooks() {
     fetcher
   );
 
+  const handleDelete = async (bookId: number) => {
+    try {
+      await fetch(`http://localhost:3001/books/${bookId}`, {
+        method: "DELETE",
+      });
+
+      mutate("http://localhost:3001/books");
+    } catch (error) {
+      console.error("Error deleting book", error);
+    }
+  };
+
   const handleEdit = async (editedBook: Book) => {
     console.log("Edited book:", editedBook);
 
