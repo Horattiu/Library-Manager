@@ -72,7 +72,9 @@ function AllBooks() {
     console.log("Edited book:", editedBook);
 
     try {
-      const url = `https://backend-librarymanager.onrender.com/${editedBook.id}`;
+      const url = `https://backend-librarymanager.onrender.com/books/${editedBook.id}`;
+      console.log("Edit URL:", url); // Log the URL being used for the edit request
+
       const response = await fetch(url, {
         method: "PUT",
         headers: {
@@ -89,6 +91,7 @@ function AllBooks() {
 
       // Update the book in the UI
       mutate("https://backend-librarymanager.onrender.com/books");
+      console.log("Books after edit:", books); // Log the updated books state
 
       setModalOpen(false);
     } catch (error) {
