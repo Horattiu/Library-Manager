@@ -11,10 +11,10 @@ services:
       - "5174:5174"
 
     environment:
-      VITE_API_URL: http://api:8001
+      VITE_API_URL: http://api:3001
 
   api:
     build: ./backend
     image: horattiul/backend-image-library
     ports:
-      - "8001:8001"
+      - "3001:3001"
