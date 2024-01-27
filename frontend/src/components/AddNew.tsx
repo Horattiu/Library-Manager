@@ -13,25 +13,25 @@ import {
 } from "@mui/material";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import useSWR, { mutate } from "swr"; 
+import { mutate } from "swr";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import MyCustomIcon from "../assets/add.png"; 
+import MyCustomIcon from "../assets/add.png";
 
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
     background: {
-      default: "#242424", 
+      default: "#242424",
     },
     text: {
       primary: "#fff",
       secondary: "#aaa",
     },
     primary: {
-      main: "#fff", 
+      main: "#fff",
     },
     secondary: {
-      main: "#1976D2", 
+      main: "#1976D2",
     },
   },
   components: {
