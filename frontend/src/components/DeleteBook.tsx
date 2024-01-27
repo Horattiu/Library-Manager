@@ -13,12 +13,12 @@ const DeleteBook: React.FC<DeleteBookProps> = ({ bookId, onDelete }) => {
   const handleDelete = async () => {
     try {
       // Make an API request to delete the book with the given bookId
-      await fetch(`http://localhost:3001/books/${bookId}`, {
+      await fetch(`https://backend-librarymanager.onrender.com/${bookId}`, {
         method: "DELETE",
       });
 
       // Optionally, you can refresh the data after deletion
-      mutate("http://localhost:3001/books");
+      mutate("hthttps://backend-librarymanager.onrender.com/books");
 
       // Call the onDelete callback to notify the parent component
       onDelete(bookId);

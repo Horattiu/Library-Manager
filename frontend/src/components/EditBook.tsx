@@ -48,7 +48,7 @@ const EditBook: React.FC<EditBookProps> = ({ book, onEdit }) => {
       try {
         console.log("Submitting edited book:", editedBook);
 
-        const url = `http://localhost:3001/books/${editedBook.id}`;
+        const url = `https://backend-librarymanager.onrender.com/books/${editedBook.id}`;
         const response = await fetch(url, {
           method: "PUT",
           headers: {
