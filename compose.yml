@@ -5,7 +5,7 @@ services:
     depends_on:
       - api
 
-    build: ./frontned
+    build: ./frontend
     image: horattiul/frontend-image-library
     ports:
       - "5174:5174"
