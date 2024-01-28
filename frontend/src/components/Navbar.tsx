@@ -13,7 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
-import MyCustomIcon2 from "../assets/library.png"; 
+import MyCustomIcon2 from "../assets/library.png";
 
 interface Props {
   window?: () => Window;
@@ -45,7 +45,7 @@ export default function DrawerAppBar(props: Props) {
       <img src={MyCustomIcon2} alt="Icon" style={{ width: 80, padding: 8 }} />
       <Divider />
       <List>
-        {["Add new book", "All"].map((item) => (
+        {["Add new book", "Collection"].map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton
               sx={{ textAlign: "center" }}
