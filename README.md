@@ -20,4 +20,4 @@ To get started with the Library Manager App on your local machine, follow the in
 
 4.Start Docker Containers:
 
--docker-compose up
+docker-compose up
